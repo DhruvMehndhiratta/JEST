@@ -4,10 +4,10 @@ import './styles.scss'
 
 const Header = () => {
     return (
-        <div className='header'>
+        <div className='header-component' data-test="header-component">
             <div className='wrap'>
                 <div className='logo-wrapper'>
-                    <img className='logo' src={require('../../assets/logo.png')} />
+                    <img className='logo' data-test='logo' src={require('../../assets/logo.png')} />
                 </div>
 
             </div>

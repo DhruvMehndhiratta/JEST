@@ -1,11 +1,30 @@
 import React from 'react';
 import { shallow } from 'enzyme'
 import Header from './index';
+import { findByTestAttribute } from '../../utils';
 
-it("it should render without errors", () => {
-    const component = shallow(<Header />)
-    const wrapper = component.find("logo-wrapper")
-    console.log(wrapper.length)
-    console.log(component.debug)
-    expect(wrapper.length).toBe(1);
+const setUp = (props = {}) => {
+    const component = shallow(<Header {...props} />)
+    return component;
+}
+
+
+
+describe("Header component render check", () => {
+    let component;
+
+    beforeEach(() => {
+        component = setUp()
+    })
+
+    it("should render without errors", () => {
+        const wrapper = findByTestAttribute(component, "header-component")
+        expect(wrapper.length).toBe(1);
+    })
+
+    it("should render a logo", () => {
+        const logo = findByTestAttribute(component, "logo")
+        expect(logo.length).toBe(1);
+    })
+
 })
