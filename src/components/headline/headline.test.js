@@ -2,7 +2,6 @@ import React from 'react'
 import { shallow } from 'enzyme';
 import Headline from './index';
 import { findByTestAttribute, checkProps } from '../../utils';
-import checkPropTypes from 'check-prop-types';
 
 
 const setUp = (props = {}) => {
